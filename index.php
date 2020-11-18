@@ -84,7 +84,7 @@
             </fieldset>
             <!--Botones-->
             <fieldset>
-              <input type="submit" value="Guardar">
+              <input name="enviar" type="submit" value="Guardar">
               <input type="reset">
             </fieldset>
           </form>
