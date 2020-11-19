@@ -19,11 +19,11 @@
             <fieldset>
               <legend>Información Personal</legend>
               <label for="nombre">Nombre
-                <input type="text" name="nombre" id="nombre">
+                <input type="text" name="nombre" id="nombre" required>
               </label>
               
               <label for="apellido">Apellido
-                <input type="text" name="apellido" id="apellido">
+                <input type="text" name="apellido" id="apellido" required>
               </label>
               <hr>
               <!-- Desde un checkbox-->
@@ -52,9 +52,9 @@
             </fieldset>
             <!--Desde select (menú desplegable)-->
             <fieldset>
-              <legend>Área de Interés</legend>
+              <legend>Área de Interés</legend> 
 
-              <select name="area">
+              <select name="area" required>
                 <option value="">- Selecciona una area -</option>
                 <option value="fe">Frontend</option>
                 <option value="be">Backend</option>
@@ -66,10 +66,10 @@
 
               <legend>Modalidad</legend>
                 <label for="pres">Presencial
-                  <input type='radio' id='pres' name="opciones" value='presencial'>
+                  <input type='radio' id='pres' name="opciones" value='presencial' required>
                 </label>  
                 <label for="vir">Virtual
-                  <input type='radio' id='vir' name="opciones" value='virtual'>
+                  <input type='radio' id='vir' name="opciones" value='virtual' required>
                 </label>
                 
             </fieldset>
@@ -78,7 +78,7 @@
 
               <legend>Comentarios:</legend>
                 <label for="mensaje"> Mensaje <br/>
-                  <textarea name="mensaje" rows="8" cols="40" id="mensaje"></textarea>
+                  <textarea name="mensaje" rows="8" cols="40" id="mensaje" required></textarea>
                 </label>
 
             </fieldset>

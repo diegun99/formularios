@@ -117,7 +117,8 @@
       <?php
 
         if (isset($_POST['mensaje']) && trim($_POST['mensaje'])) {
-            $mensaje = $_POST['mensaje'];
+          #seguridad 
+            $mensaje = filter_var( $_POST['mensaje'],FILTER_SANITIZE_STRING);
             echo "mensaje recibido: ".$mensaje;
         }else{
             echo "no hay mensaje";
