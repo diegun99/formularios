@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,53 +15,126 @@
       <h1>Obteniendo información</h1>
 
 
-      <?php
+      
+      <?php  if (isset($_POST['nombre']) && trim($_POST['nombre'])) {
+          $nombre = $_POST['nombre'];
+          echo "nombre: ".$nombre;
+        }else{
+
+          echo "no se ha recibido el nombre";
+        }
 
 
-      if (isset($_POST['nombre']) && trim($_POST['nombre'])) {
-        $nombre = $_POST['nombre'];
-        echo "nombre: ".$nombre;
-      }else{
+      
 
-        echo "no se ha recibido el nombre";
-      }
+        if (isset($_POST['apellido']) && trim($_POST['apellido'])) {
+          $apellido = $_POST['apellido'];
+          echo "apellido: ".$apellido;
+        }else{
 
-      ?>
+          echo "no se ha recibido el apellido";
+        }
 
-      <?php
-      if (isset($_POST['apellido']) && trim($_POST['apellido'])) {
-        $apellido = $_POST['apellido'];
-        echo "apellido: ".$apellido;
-      }else{
-
-        echo "no se ha recibido el apellido";
-      }
-      ?>
-
+        ?>
       <hr>
 
       <h2>Validar Checkbox</h2>
       <?php
 
-      if (isset($_POST['notificaciones'])) {
-        echo $_POST['notificaciones'];
-      }else{
-        echo "no se ha marcado la casilla"
-      }
+        if (isset($_POST['notificaciones'])) {
+          $seleccion = $_POST['notificaciones'];
+          if ($seleccion=='on') {
+              echo "se ha suscrito a nuestras notificaciones";
+          }
+        }else{
+          echo "no se ha marcado la casilla";
+        }
+        
       ?>
+
+      <hr>
+
+      <hr>
+
+      <?php
+        if (isset($_POST['tecno'])) {
+
+            $tecnologias = $_POST['tecno'];
+            echo "Usted ha seleccionado: <br>";
+            foreach($tecnologias as $tecnologia):
+                echo "=>".$tecnologia;
+                echo"<br>";
+
+
+            endforeach;
+        }else{
+            echo "no existe";
+
+        }
+
+      ?>
+
+      <?php
+        if (isset($_POST['area']) && $_POST['area']!="") {
+            $area= $_POST['area'];
+            switch ($area) {
+                case 'fe':
+                    echo "usted selecciono frontend";
+                    break;
+                case 'be':
+                    echo "usted selecciono backend";
+                    break;
+                case 'fs':
+                 echo "usted selecciono fullstack";
+                    break;
+                    
+                
+                default:
+                    echo "opcion no valida";
+                    break;
+            }
+        }else{
+            echo "no seleccione area de interes";
+        }
+
+      ?>
+
+      <hr>
+
+      <?php
+
+      if (isset($_POST['opciones'])) {
+          $opcion = $_POST['opciones'];
+          echo "la modalidad es: ".$opcion;
+      }else{
+          echo "Usted no selecciono modalidad";
+      }
+
+      ?>
+
+      <hr>
+
+      <?php
+
+        if (isset($_POST['mensaje']) && trim($_POST['mensaje'])) {
+            $mensaje = $_POST['mensaje'];
+            echo "mensaje recibido: ".$mensaje;
+        }else{
+            echo "no hay mensaje";
+        }
+
+        ?>
+
+       
 
 
       <pre>
       <?php
-        var_dump($_POST);
+          var_dump($_POST);
 
       ?>
       
-      </pre>
 
-      <pre>
-      <?php echo var_dump($_POST); ?>
-      </pre>
 
     </div>
 
