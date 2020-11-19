@@ -11,17 +11,56 @@
 
     <div class="contenedor">
 
-    <h1>Obteniendo información</h1>
+      <h1>Obteniendo información</h1>
 
-    <pre>
-    <?php
 
-        echo var_dump($_POST);
+      <?php
 
-    ?>
-    
-    
-    </pre>
+
+      if (isset($_POST['nombre']) && trim($_POST['nombre'])) {
+        $nombre = $_POST['nombre'];
+        echo "nombre: ".$nombre;
+      }else{
+
+        echo "no se ha recibido el nombre";
+      }
+
+      ?>
+
+      <?php
+      if (isset($_POST['apellido']) && trim($_POST['apellido'])) {
+        $apellido = $_POST['apellido'];
+        echo "apellido: ".$apellido;
+      }else{
+
+        echo "no se ha recibido el apellido";
+      }
+      ?>
+
+      <hr>
+
+      <h2>Validar Checkbox</h2>
+      <?php
+
+      if (isset($_POST['notificaciones'])) {
+        echo $_POST['notificaciones'];
+      }else{
+        echo "no se ha marcado la casilla"
+      }
+      ?>
+
+
+      <pre>
+      <?php
+        var_dump($_POST);
+
+      ?>
+      
+      </pre>
+
+      <pre>
+      <?php echo var_dump($_POST); ?>
+      </pre>
 
     </div>
 
