@@ -1,11 +1,11 @@
 body {
-  background-color: cadetblue;
+  background-color: cornflowerblue;
 }
 .contenedor {
   max-width:1000px;
   margin:0 auto;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #ce80b7;
 }
 h1, h2 {
   text-align: center;
@@ -22,6 +22,6 @@ div.contenido {
 }
 
 .contenido fieldset legend{
-  color: #8b0000;
+  color: #bbc788;
   font-weight: bold;
 }
